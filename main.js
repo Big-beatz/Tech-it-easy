@@ -161,3 +161,49 @@ const inventory = [
     sold: 8,
   },
 ];
+
+
+// 1a. Schrijf een array-methode om een nieuwe array met alle tv-namen te verzamelen.
+//schrijf een nieuwe variabele om alle tv namen in te verzamelen
+const inventoryNames = inventory.map((name) => {
+return 'Tv naam' + name.name;
+})
+//log de namen in de console
+console.log(inventoryNames);
+
+//1b. Schrijf een array methode die alle objecten laat zien van televiesie's die al zijn uitverkocht.
+const inventorySoldOut = inventory.filter((soldout) => {
+  return soldout.originalStock === soldout.sold;
+})
+//Log de objecten in de console
+console.log(inventorySoldOut);
+
+//1c. Schrijf een array methode die alle objecten verzameld van televieis die over ambilight beschikken
+const televisionHasAmbilight = inventory.filter((ambilight) => {
+  return ambilight.options.ambiLight === true;
+})
+
+//log het antwoord
+console.log(televisionHasAmbilight)
+
+//1d. Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
+
+//maak een array waar de namen en prijzen van de tv's worden verzameld.
+const pricesAndNames = inventory.map((priceAndName) => {
+  return priceAndName.price + ", " + priceAndName.name;
+})
+
+// console.log(pricesAndNames)
+
+//gebruik de array om de tv's per prijs en naam te filteren om deze te sorteren.
+const sortedByPrice = pricesAndNames.sort((a, b) => {
+  if(a < b){
+    return -1;
+  }
+  if( a > b){
+    return 1;
+  }
+  return 0;
+})
+//Log de gesorteerde objecten in de console.
+console.log(sortedByPrice);
