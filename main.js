@@ -207,3 +207,29 @@ const sortedByPrice = pricesAndNames.sort((a, b) => {
 })
 //Log de gesorteerde objecten in de console.
 console.log(sortedByPrice);
+
+// Opdracht 2a: Hoeveel tv's zijn er al verkocht? Schrijf een script dat dit berekent. Log de uitkomst in de console.
+let stockSold = 0;
+let totalOriginalStock = 0;
+for (let i = 0; i < inventory.length; i++){
+  totalOriginalStock += inventory[i].originalStock;
+  stockSold += inventory[i].sold;
+}
+
+let leftInInventory = totalOriginalStock - stockSold;
+
+
+
+const numbersBought = document.getElementById("Ingekocht");
+numbersBought.innerHTML = totalOriginalStock;
+
+const numbersSold = document.getElementById("Verkocht");
+numbersSold.innerHTML = stockSold;
+
+const inStock = document.getElementById("Voorraad");
+inStock.innerHTML = leftInInventory;
+
+// Opdracht 2b: Zorg ervoor dat dit aantal in het groen wordt weergegeven op de pagina.
+//     Opdracht 2c: Hoeveel tv's heeft Tech It Easy ingekocht? Schrijf een script dat dit berekent. Log de uitkomst in de console.
+// Opdracht 2d: Zorg ervoor dat dit aantal in het blauw wordt weergegeven op de pagina.
+//     Opdracht 2e: Geef in het rood weer hoeveel tv's er nog verkocht moeten worden.
