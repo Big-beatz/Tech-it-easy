@@ -216,20 +216,68 @@ for (let i = 0; i < inventory.length; i++){
   stockSold += inventory[i].sold;
 }
 
-let leftInInventory = totalOriginalStock - stockSold;
-
-
-
-const numbersBought = document.getElementById("Ingekocht");
-numbersBought.innerHTML = totalOriginalStock;
-
-const numbersSold = document.getElementById("Verkocht");
-numbersSold.innerHTML = stockSold;
-
-const inStock = document.getElementById("Voorraad");
-inStock.innerHTML = leftInInventory;
-
 // Opdracht 2b: Zorg ervoor dat dit aantal in het groen wordt weergegeven op de pagina.
 //     Opdracht 2c: Hoeveel tv's heeft Tech It Easy ingekocht? Schrijf een script dat dit berekent. Log de uitkomst in de console.
 // Opdracht 2d: Zorg ervoor dat dit aantal in het blauw wordt weergegeven op de pagina.
 //     Opdracht 2e: Geef in het rood weer hoeveel tv's er nog verkocht moeten worden.
+
+//2b
+const numbersBought = document.getElementById("Ingekocht");
+numbersBought.innerHTML = totalOriginalStock;
+//2d
+const numbersSold = document.getElementById("Verkocht");
+numbersSold.innerHTML = stockSold;
+//2e
+
+let leftInInventory = totalOriginalStock - stockSold;
+
+const inStock = document.getElementById("Voorraad");
+inStock.innerHTML = leftInInventory;
+
+// Opdracht 3a: Gebruik een array-methode om alle tv merken (zoals Philips, NIKKEI, etc.)
+// in een lijst op de pagina weer te geven.
+// Zorg ervoor dat dit ook zou werken als we 200 tv's in onze array zouden hebben staan.
+// Dat er dubbele namen in zitten, is niet erg.
+
+//Maak een variabele die een lijst maakt van alle merken
+function listNames([]){
+
+// Maak een array van alle namen worden verzameld
+const brandNames = inventory.map((brandName) => {
+  return brandName.brand;
+})
+// Maak een node waar alle list items in terecht kunnen
+const listOfBrands = document.getElementById("Merklijst");
+
+  //maak van elke naam een <li> element en plaats hier de naam in. Zorg daarna dat deze in de juiste node komt
+  brandNames.forEach(brandName => {
+    let newBrand = document.createElement('li');
+    newBrand.textContent = brandName;
+    listOfBrands.appendChild(newBrand);
+  })
+}
+
+//roep de functie aan
+listNames(inventory);
+// dit is de methode in een for loop
+
+// const listOfBrands = document.getElementById("Merklijst");
+// for (let i = 0; i < inventory.length; i++){
+//     let newBrand = document.createElement('li');
+//   newBrand.textContent = inventory[i].brand;
+//   listOfBrands.appendChild(newBrand)
+// }
+// return listOfBrands
+// }
+
+// listNames(inventory)
+//koppel deze merken aan een lijst in het HTML bestand
+// const listOfBrands = document.getElementById("Merklijst").value;
+// listOfBrands.innerHTML = ' '
+
+// Opdracht 4b: Schrijf de code uit 4a om naar een functie die een array met tv-objecten verwacht.
+// Het is handig om onze scripts als functies op te zetten, zodat we ze gemakkelijk kunnen hergebruiken.
+// Tip: vergeet deze functie -declaratie niet aan te roepen!
+
+
+// zie het antwoord van 4a
