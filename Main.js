@@ -279,5 +279,5 @@ listNames(inventory);
 // Het is handig om onze scripts als functies op te zetten, zodat we ze gemakkelijk kunnen hergebruiken.
 // Tip: vergeet deze functie -declaratie niet aan te roepen!
 
-
 // zie het antwoord van 4a
+
