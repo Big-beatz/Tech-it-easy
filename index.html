@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <link rel="stylesheet" href="Styles.css">
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
 </head>
 <body>
+<header>
+    <h1>Tech it Easy</h1>
+    <p>Welkom</p>
+</header>
+<main>
+    <h2>Voorraad</h2>
+    <ul id ="Voorraadoverzicht">
+        <li> Er zijn <span id ="Ingekocht">[nummer]</span> tv's ingekocht</li>
+        <li> Er zijn <span id ="Verkocht">[nummer]</span> tv's verkocht</li>
+        <li> Er zijn nog <span id ="Voorraad">[nummer]</span> op voorraad</li>
+    </ul>
 
+    <h2>Zoek per merk</h2>
+    <ul id ="Merklijst"></ul>
+</main>
+
+<script src="Main.js"></script>
+<script src="OpdrachtVijf.js"></script>
 </body>
 </html>

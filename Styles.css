@@ -1,0 +1,17 @@
+body{
+    background-color: lightslategrey;
+}
+
+ul{
+    list-style: none;
+}
+
+span#Ingekocht{
+    color: darkgreen;
+}
+span#Verkocht{
+    color: midnightblue;
+}
+span#Voorraad{
+    color: darkred;
+}
